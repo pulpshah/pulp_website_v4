@@ -22,7 +22,7 @@
   --measure:64ch;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{
   margin:0;
   background:var(--ground);
@@ -73,10 +73,74 @@ a{color:inherit;text-decoration:none}
 }
 .nav-links a.nav-btn:hover{background:#E4E1F5;color:#3E3680}
 .nav-links a.nav-btn[aria-current="page"]{background:#E4E1F5;color:#3E3680;border-bottom:none}
+
+/* mobile menu */
+.nav-toggle{
+  display:none;
+  appearance:none;-webkit-appearance:none;
+  background:none;border:0;cursor:pointer;
+  padding:12px;margin:-12px -12px -12px 0;
+}
+.nav-toggle-box{display:block;position:relative;width:22px;height:14px}
+.nav-toggle-line{
+  position:absolute;left:0;width:22px;height:2px;border-radius:2px;
+  background:var(--ink);
+  transition:transform .3s cubic-bezier(.2,.7,.25,1),top .3s cubic-bezier(.2,.7,.25,1);
+}
+.nav-toggle-line:nth-child(1){top:2px}
+.nav-toggle-line:nth-child(2){top:10px}
+.nav.open .nav-toggle-line:nth-child(1){top:6px;transform:rotate(45deg)}
+.nav.open .nav-toggle-line:nth-child(2){top:6px;transform:rotate(-45deg)}
+.nav-scrim{
+  position:fixed;inset:0;z-index:40;
+  background:rgba(28,27,25,.28);
+  opacity:0;visibility:hidden;
+  transition:opacity .3s ease,visibility 0s linear .3s;
+}
+.nav-scrim.show{opacity:1;visibility:visible;transition:opacity .3s ease}
 @media(max-width:760px){
   .nav-in{padding:16px 22px}
-  .nav-links{gap:18px}
-  .nav-links a{font-size:13px}
+  .nav-toggle{display:block}
+  body.menu-open{overflow:hidden}
+  .nav-links{
+    position:absolute;top:100%;left:0;right:0;
+    display:block;
+    background:var(--ground);
+    border-bottom:1px solid var(--hairline);
+    box-shadow:0 24px 48px -32px rgba(28,27,25,.28);
+    padding:6px 22px 22px;
+    max-height:calc(100vh - 56px);
+    max-height:calc(100svh - 56px);
+    overflow-y:auto;
+    opacity:0;visibility:hidden;transform:translateY(-10px);
+    transition:opacity .25s ease,transform .32s cubic-bezier(.2,.7,.25,1),visibility 0s linear .32s;
+  }
+  .nav.open .nav-links{
+    opacity:1;visibility:visible;transform:none;
+    transition:opacity .25s ease,transform .32s cubic-bezier(.2,.7,.25,1);
+  }
+  .nav-links a{
+    display:flex;align-items:center;justify-content:space-between;
+    font-family:var(--display);
+    font-size:19px;font-weight:600;letter-spacing:-.015em;
+    color:var(--ink);
+    padding:16px 2px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .nav-links a[aria-current="page"]{color:var(--lav-deep);border-bottom-color:var(--hairline)}
+  .nav-links a::after{
+    content:"\2192";
+    font-family:var(--text);
+    font-size:15px;font-weight:500;
+    color:var(--ink-faint);
+  }
+  .nav-links a.nav-btn{
+    display:flex;justify-content:center;
+    margin-top:20px;padding:14px 18px;
+    border-radius:999px;font-size:16px;
+    border-bottom:none;
+  }
+  .nav-links a.nav-btn::after{content:none}
 }
 
 /* ---------------- views ---------------- */
@@ -257,6 +321,20 @@ a{color:inherit;text-decoration:none}
 @media(max-width:900px){.sitemap{grid-template-columns:repeat(3,auto);gap:30px 40px}}
 @media(max-width:560px){.sitemap{grid-template-columns:repeat(2,auto);gap:26px 32px}}
 
+/* mobile rhythm */
+@media(max-width:560px){
+  .hero{padding:78px 22px 64px}
+  .page{padding:60px 22px 64px}
+  .essay .lede{margin-bottom:44px}
+  .tickrule{margin:36px 0}
+  .learn{padding:5px 0}
+  .backlink{margin-bottom:30px;padding:6px 0}
+  .foot{padding:36px 22px 26px}
+  .sitemap{padding-bottom:28px;margin-bottom:26px}
+  .sitemap h6{margin-bottom:8px}
+  .sitemap a{margin-bottom:0;padding:7px 0}
+}
+
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .rise{opacity:1;transform:none}
@@ -279,7 +357,10 @@ a{color:inherit;text-decoration:none}
         <path d="M115.037 4.57862V0.43199H116.166L117.239 3.35511H117.259L118.327 0.43199H119.452V4.57862H118.608V1.65038H118.588L117.571 4.57862H116.861L115.849 1.65038H115.829V4.57862H115.037Z" fill="#201E1F"/>
       </svg>
     </a>
-    <div class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle-box" aria-hidden="true"><span class="nav-toggle-line"></span><span class="nav-toggle-line"></span></span>
+    </button>
+    <div class="nav-links" id="nav-menu">
       <a href="#/thinkwell" data-route="thinkwell">Thinkwell</a>
       <a href="#/science" data-route="science">Science</a>
       <a href="#/ontology" data-route="ontology">Ontology</a>
@@ -290,6 +371,7 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
 </nav>
+<div class="nav-scrim" aria-hidden="true"></div>
 
 <!-- ================= HOME ================= -->
 <main class="view active" id="view-home">
@@ -2001,8 +2083,30 @@ a{color:inherit;text-decoration:none}
     var a = e.target.closest('a[data-route]');
     if (!a) return;
     e.preventDefault();
+    setMenu(false);
     var route = a.getAttribute('data-route');
     location.hash = (route === 'home') ? '#/' : '#/' + route;
+  });
+
+  var nav = document.querySelector('.nav');
+  var toggle = document.querySelector('.nav-toggle');
+  var scrim = document.querySelector('.nav-scrim');
+  function setMenu(open){
+    nav.classList.toggle('open', open);
+    scrim.classList.toggle('show', open);
+    document.body.classList.toggle('menu-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  toggle.addEventListener('click', function(){
+    setMenu(!nav.classList.contains('open'));
+  });
+  scrim.addEventListener('click', function(){ setMenu(false); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') setMenu(false);
+  });
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 760) setMenu(false);
   });
 
   window.addEventListener('hashchange', fromHash);
