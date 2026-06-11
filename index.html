@@ -56,7 +56,7 @@ a{color:inherit;text-decoration:none}
 .wordmark svg{display:block;transition:opacity .2s ease}
 .wordmark:hover svg{opacity:.75}
 @media(max-width:560px){.wordmark svg{width:92px;height:auto}}
-.nav-links{display:flex;gap:32px;align-items:baseline;flex-wrap:wrap}
+.nav-links{display:flex;gap:28px;align-items:baseline;flex-wrap:wrap}
 .nav-links a{
   font-size:14.5px;font-weight:500;letter-spacing:.01em;
   color:var(--ink-dim);
@@ -98,7 +98,7 @@ a{color:inherit;text-decoration:none}
   transition:opacity .3s ease,visibility 0s linear .3s;
 }
 .nav-scrim.show{opacity:1;visibility:visible;transition:opacity .3s ease}
-@media(max-width:760px){
+@media(max-width:900px){
   .nav-in{padding:16px 22px}
   .nav-toggle{display:block}
   body.menu-open{overflow:hidden}
@@ -361,12 +361,12 @@ a{color:inherit;text-decoration:none}
       <span class="nav-toggle-box" aria-hidden="true"><span class="nav-toggle-line"></span><span class="nav-toggle-line"></span></span>
     </button>
     <div class="nav-links" id="nav-menu">
-      <a href="#/thinkwell" data-route="thinkwell">Thinkwell</a>
+      <a href="#/platforms" data-route="platforms">Platforms</a>
+      <a href="#/capabilities" data-route="capabilities">Capabilities</a>
       <a href="#/science" data-route="science">Science</a>
-      <a href="#/ontology" data-route="ontology">Ontology</a>
       <a href="#/services" data-route="services">Services</a>
-      <a href="#/pricing" data-route="pricing">Pricing</a>
-      <a href="#/thesis" data-route="thesis">About</a>
+      <a href="#/industries" data-route="industries">Industries</a>
+      <a href="#/company" data-route="company">Company</a>
       <a href="#/contact" data-route="contact" class="nav-btn">Contact</a>
     </div>
   </div>
@@ -525,8 +525,25 @@ a{color:inherit;text-decoration:none}
     <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
 
     <section>
+      <h2>Persuasive intelligence.</h2>
+      <p>Analytics count reach, opens, and sentiment. Persuasive intelligence is the missing column: whether the argument moved anyone, and whether it stayed moved.</p>
+      <a href="#/intelligence" data-route="intelligence" class="learn">Learn more about persuasive intelligence <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
       <h2>Stateful personas.</h2>
       <p>Audiences are not snapshots. Our persona models carry state: what a listener believed before, what they heard, what shifted, and what that implies about the next message. Measurement that updates as people do.</p>
+      <a href="#/personas" data-route="personas" class="learn">Learn more about stateful personas <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>The ontology.</h2>
+      <p>You cannot score what you have not defined. Beneath the models sits a formal vocabulary of persuasion, what a claim is, what counts as evidence, how arguments relate, so that two measurements can mean the same thing twice.</p>
+      <a href="#/ontology" data-route="ontology" class="learn">Learn more about the ontology <span>&rarr;</span></a>
     </section>
 
     <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -1876,6 +1893,178 @@ a{color:inherit;text-decoration:none}
   </article>
 </main>
 
+<!-- ================= PLATFORMS ================= -->
+<main class="view page" id="view-platforms">
+  <article class="essay">
+    <p class="eyebrow">Platforms</p>
+    <h1>One engine, two ways in.</h1>
+    <p class="lede">Everything Pulp makes runs on the same measurement layer. It reaches you as a workstation for the people doing the work, or as an API for the products they build.</p>
+
+    <section>
+      <h2>Thinkwell.</h2>
+      <p>The communications workstation for government affairs: tracking, analysis, drafting, and outreach in one system, with measurement traveling the whole way. It is the engine fitted to the hardest rooms in Washington, and it runs in production today.</p>
+      <a href="#/thinkwell" data-route="thinkwell" class="learn">See Thinkwell <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>Pulp API.</h2>
+      <p>Conversations in, structured judgment out. Send a transcript and receive resonance scores, an argument map, and persona signals over a straightforward REST interface, metered to volume and versioned like the science underneath it.</p>
+      <a href="#/api" data-route="api" class="learn">Explore the Pulp API <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>The same instrument underneath.</h2>
+      <p>Workstation and API are one engine wearing different clothes. When the measurement layer improves, both inherit the improvement the day it ships. That is the advantage of building platforms on an instrument rather than bolting an instrument onto platforms.</p>
+      <a href="#/contact" data-route="contact" class="page-cta">See either in action <span class="arrow">&rarr;</span></a>
+    </section>
+  </article>
+</main>
+
+<!-- ================= CAPABILITIES ================= -->
+<main class="view page" id="view-capabilities">
+  <article class="essay">
+    <p class="eyebrow">Capabilities</p>
+    <h1>What the instrument does.</h1>
+    <p class="lede">Four capabilities, one measurement layer. Each is useful alone. Together they compound.</p>
+
+    <section>
+      <h2>Objective-based scoring.</h2>
+      <p>Every conversation has a goal, and we score against it: persuade, inform, reassure, or close, declared up front so the number means something and an auditor can check it.</p>
+      <a href="#/scoring" data-route="scoring" class="learn">Inside objective-based scoring <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>Audience simulation.</h2>
+      <p>Rehearse the message before the audience hears it. Simulations built from measured personas narrow the field at draft speed; the live panel confirms the winner.</p>
+      <a href="#/simulation" data-route="simulation" class="learn">See audience simulation <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>Workflow automation.</h2>
+      <p>Most automation moves the work around; ours knows whether the work worked. With measurement inside the loop, briefs draft themselves from what changed and follow-ups fire on movement rather than calendars.</p>
+      <a href="#/automation" data-route="automation" class="learn">See workflow automation <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>Causal AI.</h2>
+      <p>Did the message move them, or were they moving anyway? Continuous trajectories and known panel conditions let us tell the difference, and the uncertainty ships with the number.</p>
+      <a href="#/causal" data-route="causal" class="learn">How we make causal claims <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>The compounding part.</h2>
+      <p>Scoring feeds the personas, the personas power the simulations, and automation carries all three into the daily work. Use one capability and the others get sharper.</p>
+      <a href="#/contact" data-route="contact" class="page-cta">See them on your problem <span class="arrow">&rarr;</span></a>
+    </section>
+  </article>
+</main>
+
+<!-- ================= INDUSTRIES ================= -->
+<main class="view page" id="view-industries">
+  <article class="essay">
+    <p class="eyebrow">Industries</p>
+    <h1>Where arguments decide outcomes.</h1>
+    <p class="lede">Persuasion is not an industry. It is what industries run on. These are the four where Pulp works today.</p>
+
+    <section>
+      <h2>Government affairs &amp; policy.</h2>
+      <p>The first market we chose, because it would tell us the truth quickly. Thinkwell carries the whole workflow, and a leading Washington firm runs on it in production.</p>
+      <a href="#/government" data-route="government" class="learn">Pulp in Washington <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>Publishing &amp; media.</h2>
+      <p>Pageviews measure attention; they say nothing about effect. Pulp scores what your words do after they're read, which framings hold, and where readers' beliefs are drifting between issues.</p>
+      <a href="#/publishing" data-route="publishing" class="learn">Pulp in the newsroom <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>Marketing &amp; insights.</h2>
+      <p>Messages tested on what they accomplish rather than what people recall, against audience models that update continuously instead of quarterly.</p>
+      <a href="#/marketing" data-route="marketing" class="learn">Pulp for marketers <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>Research &amp; academia.</h2>
+      <p>Scored persuasion data and documented methods, held to a standard you can publish on. The field is young, and we would like company.</p>
+      <a href="#/academia" data-route="academia" class="learn">Pulp for researchers <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>Yours next.</h2>
+      <p>If your team's job is changing minds, the instrument generalizes. Tell us what you're working against and we'll show you what it sees.</p>
+      <a href="#/contact" data-route="contact" class="page-cta">Bring us your hardest room <span class="arrow">&rarr;</span></a>
+    </section>
+  </article>
+</main>
+
+<!-- ================= COMPANY ================= -->
+<main class="view page" id="view-company">
+  <article class="essay">
+    <p class="eyebrow">Company</p>
+    <h1>The company behind the instrument.</h1>
+    <p class="lede">Small, senior, and bootstrapped into production. Who we are, what we charge, and where the depth lives.</p>
+
+    <section>
+      <h2>The thesis.</h2>
+      <p>Why persuasion is measurable, why now, and why we built a panel before a product. The argument for the whole company fits on one page, and we keep it where everyone can check it.</p>
+      <a href="#/thesis" data-route="thesis" class="learn">Read the thesis <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>Team.</h2>
+      <p>Built by people who argued for a living and people who model arguments for one: competitive debate, machine learning, product design, and public affairs on one small roster, hiring slowly and deliberately.</p>
+      <a href="#/team" data-route="team" class="learn">Meet the team <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>Pricing.</h2>
+      <p>Priced like infrastructure, not seats. Research, Platform, and Enterprise tiers follow what you're building, and we will tell you quickly if Pulp is not ready for your use case.</p>
+      <a href="#/pricing" data-route="pricing" class="learn">See pricing <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>Resources.</h2>
+      <p>The pages on this site are deliberately short. The resource library is the rooms behind them, one layer deeper on every idea, for readers who want to keep going.</p>
+      <a href="#/resources" data-route="resources" class="learn">Browse the resources <span>&rarr;</span></a>
+    </section>
+
+    <div class="tickrule" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <section>
+      <h2>Talk to a person.</h2>
+      <p>Investors, partners, researchers, and teams with something to measure: reach us by email and a person will answer.</p>
+      <a href="#/contact" data-route="contact" class="page-cta">Get in touch <span class="arrow">&rarr;</span></a>
+    </section>
+  </article>
+</main>
+
 <!-- ================= FOOTER (shared) ================= -->
 <footer class="foot">
   <div class="sitemap">
@@ -1929,6 +2118,10 @@ a{color:inherit;text-decoration:none}
 (function(){
   var routes = {
     'home':'view-home',
+    'platforms':'view-platforms',
+    'capabilities':'view-capabilities',
+    'industries':'view-industries',
+    'company':'view-company',
     'thesis':'view-thesis',
     'thinkwell':'view-thinkwell',
     'science':'view-science',
@@ -1993,6 +2186,10 @@ a{color:inherit;text-decoration:none}
   };
   var titles = {
     'home':'Pulp — Persuasion, measured.',
+    'platforms':'Pulp — Platforms',
+    'capabilities':'Pulp — Capabilities',
+    'industries':'Pulp — Industries',
+    'company':'Pulp — Company',
     'thesis':'Pulp — The thesis',
     'thinkwell':'Pulp — Thinkwell',
     'science':'Pulp — Science',
@@ -2056,6 +2253,15 @@ a{color:inherit;text-decoration:none}
     'r-mapping':'Pulp — How conversations become maps'
   };
 
+  var navParent = {
+    'thinkwell':'platforms','api':'platforms',
+    'scoring':'capabilities','simulation':'capabilities','automation':'capabilities','causal':'capabilities',
+    'intelligence':'science','personas':'science','ontology':'science','research':'science',
+    'consulting':'services','engagement':'services','design':'services','ai':'services',
+    'government':'industries','publishing':'industries','marketing':'industries','academia':'industries',
+    'thesis':'company','pricing':'company','team':'company','resources':'company'
+  };
+
   function show(route){
     var r = routes[route] ? route : 'home';
     var views = document.querySelectorAll('.view');
@@ -2063,8 +2269,9 @@ a{color:inherit;text-decoration:none}
       views[i].classList.toggle('active', views[i].id === routes[r]);
     }
     var navAs = document.querySelectorAll('.nav-links a[data-route]');
+    var navRoute = navParent[r] || r;
     for (var j=0;j<navAs.length;j++){
-      if (navAs[j].getAttribute('data-route') === r){
+      if (navAs[j].getAttribute('data-route') === navRoute){
         navAs[j].setAttribute('aria-current','page');
       } else {
         navAs[j].removeAttribute('aria-current');
@@ -2106,7 +2313,7 @@ a{color:inherit;text-decoration:none}
     if (e.key === 'Escape') setMenu(false);
   });
   window.addEventListener('resize', function(){
-    if (window.innerWidth > 760) setMenu(false);
+    if (window.innerWidth > 900) setMenu(false);
   });
 
   window.addEventListener('hashchange', fromHash);
